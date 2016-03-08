@@ -13,7 +13,7 @@ module.exports = function(gulp, config){
     });
 
     gulp.task('watch', ['browserSync'], function(){
-        gulp.watch(config.sources.js, browserSync.reload);
+        gulp.watch(config.paths.sources.js, browserSync.reload);
     });
 
 

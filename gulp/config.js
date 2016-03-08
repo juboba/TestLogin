@@ -5,8 +5,11 @@ module.exports = {
     stubs: {
         files: 'stubs/*-config.json'
     },
-    sources: {
-        js: 'app/**/*js'
+    paths: {
+        sources: {
+            js: 'app/**/*js'
+        },
+        dist: 'dist'
     },
     karma: {
         configFile: __dirname + '/../karma.conf.js'
