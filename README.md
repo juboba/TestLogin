@@ -25,3 +25,17 @@ This test application will show a responsive login page. It has been written thi
 * gulp-minify
 * karma
 * jasmine
+
+## Commands
+
+To run the tests please use:
+
+```
+npm test
+```
+
+To run the application just run:
+
+```
+npm start
+```
