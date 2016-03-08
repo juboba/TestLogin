@@ -7,5 +7,8 @@ module.exports = {
     },
     sources: {
         js: 'app/**/*js'
+    },
+    karma: {
+        configFile: __dirname + '/../karma.conf.js'
     }
 };
