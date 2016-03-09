@@ -7,7 +7,9 @@ module.exports = {
     },
     paths: {
         sources: {
-            js: 'app/**/*js'
+            js: 'app/**/*js',
+            css: 'app/**/*css',
+            html: 'app/**/*html'
         },
         dist: 'dist'
     },
