@@ -1,11 +1,28 @@
 <html>
     <head>
         <title></title>
-        <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
     </head>
-    <body>
-    Hello!
-        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="app/login.js"></script>
+    <body ng-app="testApp">
+
+        <div id="wrapper">
+            <div id="wrapper2">
+                <div id="login" ng-controller="loginController">
+                    <form name="loginForm" novalidate ng-submit="login()">
+                        <span ng-show="loginForm.email.$error">Email is invalid</span>
+                        Email: <input type="email" ng-model-options="{updateOn: 'blur'}" ng-model="email" />
+                        Password: <input type="password" ng-model="password" />
+                        <input type="submit" value="Login" />
+                    </form>
+                </div>
+            </div>
+        </div>
+      
+        <script type="text/javascript" src="angular/angular.js"></script>
+        <script type="text/javascript" src="angular-mocks/angular-mocks.js"></script>
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/controllers/login-controller.js"></script>
+        <script type="text/javascript" src="scripts/services/login-service.js"></script>
     </body>
 </html>
