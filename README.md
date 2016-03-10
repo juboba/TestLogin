@@ -20,11 +20,11 @@ This test application will show a responsive login page. It has been written thi
 
 ## Development tools
 
-* NPM
 * gulp
 * gulp-minify
 * karma
 * jasmine
+* angular-mocks
 
 ## Commands
 
@@ -34,8 +34,14 @@ To run the tests please use:
 npm test
 ```
 
-To run the application just run:
+To run the application in your default browser just run:
 
 ```
 npm start
+```
+
+To minify the js files run:
+
+```
+gulp build
 ```
