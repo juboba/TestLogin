@@ -27,7 +27,7 @@ angular.module('testApp')
             .then(function(response){
                 defer.resolve(response.data);
             }, function(response){
-                defer.reject(response.data);
+                defer.reject([response.data]);
             });
         } else {
             defer.reject(errors);
