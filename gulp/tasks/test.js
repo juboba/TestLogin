@@ -4,7 +4,7 @@ var karmaServer = require('karma').Server;
 
 module.exports = function(gulp, config){
 
-    gulp.task('test', ['stubby'], function(done){
+    gulp.task('test', function(done){
         new karmaServer({
             configFile: config.karma.configFile,
             singleRun: true
