@@ -11,5 +11,6 @@ angular.module('testApp')
         function(response){
             $scope.message = response.message;
         });
+
     };
 }]);

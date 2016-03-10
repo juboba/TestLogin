@@ -4,6 +4,14 @@ angular.module('testApp')
     this.make = function(email, password){
         var defer = $q.defer();
 
+	if (!password || password.length < 8) {
+	    defer.reject({
+		message: 'Password must be at least 8 characters long.'
+	    });
+
+	    return defer.promise;
+	}
+
         $http.post('/login', {
             email: email,
             password: password
