@@ -1,28 +1,33 @@
 describe('Login tests', function(){
     beforeEach(module('testApp'));
 
-    var $controller;
+    var Login, $rootScope;
 
-    beforeEach(inject(function(_$controller_){
-        $controller = _$controller_;
+    beforeEach(inject(function(_Login_, _$rootScope_){
+        Login = _Login_;
+        $rootScope = _$rootScope_;
     }));
 
     describe('Login tests', function(){
-        var $scope, controller;
 
         it('should not allow a password with less than 8 characters', function(){
-            var $scope = {};
-            var controller = $controller('loginController', {$scope: $scope});
-            var result = false;
+	    var email = 'joe@domain.com';
+	    var password = '1234';
 
-            $scope.email = 'myuser@mymail.mydomain';
-            $scope.password = 'mytestpassword';
+	    Login.make(email, password)
+		.then(function(res){
+		    //expect(res).toBe(true);
+		}, function(res){
+		    //expect(res).toBe(true);
+		});
 
-            result = $scope.validate();
+	    $rootScope.$apply();
 
-            expect(result).toBe(false);
+	    expect(false).toBe(true);
+
         });
 
+	/*
         it('should not allow login if the email is not well formatted', function(){
             var $scope = {};
             var controller = $controller('loginController', {$scope: $scope});
@@ -61,6 +66,7 @@ describe('Login tests', function(){
 
             expect(result).toBe(true);
         });
+	*/
     });
 
 });
