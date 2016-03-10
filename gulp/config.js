@@ -2,9 +2,6 @@
 
 module.exports = {
     baseDir: 'app',
-    stubs: {
-        files: 'stubs/*-config.json'
-    },
     paths: {
         sources: {
             js: 'app/**/*js',
