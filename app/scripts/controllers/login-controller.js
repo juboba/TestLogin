@@ -7,9 +7,11 @@ angular.module('testApp')
         .then(
         function(response){
             $scope.message = response.message;
+            $scope.errors = [];
         },
         function(response){
-            $scope.message = response.message;
+            $scope.errors = response;
+            $scope.message = '';
         });
 
     };

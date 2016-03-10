@@ -1,4 +1,4 @@
-describe('Login tests', function(){
+describe('Login Service =>', function(){
     var Login, $rootScope, $http, handler;
 
     beforeEach(module('testApp'));
@@ -8,6 +8,28 @@ describe('Login tests', function(){
         Login = _Login_;
         $rootScope = _$rootScope_;
     }));
+
+    it('should not allow an invalid email', function(){
+        var email = 'joe';
+        var password = '12345678';
+        var result;
+
+        spyOn($http, 'post');
+        
+        Login.make(email, password)
+            .then(function(res){
+                result = res;
+            }, function(err){
+                console.log(err);
+                result = err;
+            });
+
+        $rootScope.$apply();
+
+        expect($http.post).not.toHaveBeenCalled();
+
+        expect(result[0].message).toBe('Email is not valid.');
+    });
 
     it('should not allow a password with less than 8 characters', function(){
         var email = 'joe@domain.com';
@@ -19,15 +41,15 @@ describe('Login tests', function(){
         Login.make(email, password)
             .then(function(res){
                 result = res;
-            }, function(tre){
-                result = tre;
+            }, function(err){
+                result = err;
             });
 
         $rootScope.$apply();
 
         expect($http.post).not.toHaveBeenCalled();
 
-        expect(result.message).toBe('Password must be at least 8 characters long.');
+        expect(result[0].message).toBe('Password must be at least 8 characters long.');
     });
 
     it('should not allow the login of password with value "password"', function(){

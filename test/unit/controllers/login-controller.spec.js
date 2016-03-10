@@ -1,4 +1,4 @@
-describe('Login tests', function(){
+describe('Login Controller =>', function(){
     beforeEach(module('testApp'));
 
     var Login, $rootScope, $controller;

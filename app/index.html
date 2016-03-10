@@ -12,8 +12,6 @@
 		    <form name="loginForm" novalidate ng-submit="login()">
 			<fieldset>
 			    <legend>Login</legend>
-			    <span ng-show="!loginForm.email.$valid">Email is invalid</span>
-
 			    <div ng-class="{'has-error': !loginForm.email.$valid}">
 				<span>Email: </span>
 				<input class="form-control" name="email" type="email" ng-model-options="{updateOn: 'blur'}" ng-model="email" />
@@ -23,6 +21,7 @@
 				<input class="form-control" name="password" type="password" ng-model="password" />
 			    </div>
 
+			    <span ng-repeat="err in errors" style="float: left" ng-bind="err.message"></span>
 			    <span style="float: left" ng-bind="message"></span>
 
 			    <input class="btn btn-primary" type="submit" value="Login" />
