@@ -18,7 +18,7 @@
 			    </div>
 			    <div ng-class="{'has-error': !loginForm.password.$valid}">
 				<span>Password:</span>
-				<input class="form-control" name="password" type="password" ng-model="password" />
+				<input class="form-control" name="password" type="password" ng-model="password" pattern=".{0}|.{8,}"/>
 			    </div>
 
 			    <span ng-repeat="err in errors" style="float: left" ng-bind="err.message"></span>

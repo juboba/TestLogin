@@ -7,12 +7,14 @@ angular.module('testApp')
         .then(
         function(response){
             $scope.message = response.message;
-            $scope.errors = [];
         },
-        function(response){
-            $scope.errors = response;
+        function(errors){
+            for(var i in errors){
+                alert(errors[i].message);
+            }
             $scope.message = '';
         });
+        return false;
 
     };
 }]);
